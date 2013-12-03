@@ -1,7 +1,7 @@
 # coding: utf-8
 # ネズミはチーズがお好き？
 # https://codeiq.jp/challenge.php?challenge_id=564
-# mouse4.rb: 幅優先の全探索で最短距離を求める。結構時間がかかった orz
+# 幅優先の全探索で最短距離を求める。結構時間がかかった orz
 
 class Mouse
   attr_reader :min_moves
@@ -71,40 +71,6 @@ class Mouse
       end
     end
   end
-
-
-  # # @param Array<Fixnum,Fixnum> new_move 座標
-  # # @param [Array<Array>] history
-  # def move new_move, history
-  #   unless history.include? new_move
-  #     if new_move[0].between?(0, 4) && new_move[1].between?(0, 4)
-  #       # 動ける
-  #       history |= [new_move]
-  #       # puts "Moved. #{history.inspect}"
-  #       # 判定
-  #       if eaten? history
-  #         # 終了
-  #         # puts "Finished. #{history.size-1} moves."
-  #         @min_moves ||= history
-  #         if history.size < @min_moves.size
-  #           @min_moves = history
-  #           puts @min_moves.inspect
-  #         end
-  #       else
-  #         # 終了していない
-  #         (1..8).each do |d|
-  #           move Mouse.coord(d, new_move), history
-  #         end
-  #       end
-  #     else
-  #       # 動けない
-  #       # do nothing.
-  #     end
-  #   else
-  #     # 動けない
-  #     # do nothing.
-  #   end
-  # end
 
   def eaten? history
     return false if history.nil? || history.size == 0
